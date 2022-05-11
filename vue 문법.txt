@@ -1,0 +1,38 @@
+<template>
+<div>
+	<!-- if 문 -->
+	<div v-if="[조건]">
+		<p>if문 조건이 맞으면 노출합니다.</p>
+	</div>
+        
+	<!-- if-else 문 -->
+	<div v-if="[조건]">
+		<p>if문 조건이 맞으면 노출합니다.</p>
+	</div>
+	<div v-if-else="[else 조건]">
+		<p>else if문 조건이 맞으면 노출합니다.</p>
+	</div>
+	<div v-else>
+		<p>일치하는 조건이 없으면 노출합니다.</p>
+	</div>    
+</div>
+<template>
+
+
+<template>
+	<div>
+    	<!-- for 문 -->
+    	<ul>
+        	<li v-for="num in numbers">{{n}}</li>
+        </ul>
+        
+        <!-- for문 사용하면서 if문 조건식이 필요할 때 -->
+        <ul>
+        	<li v-for="num in numbers">
+            	<template v-if="n%2===0">  <!-- 짝수만 노출 -->
+            	{{n}}
+                </template>
+            </li>
+        </ul>
+    </div>
+</template>

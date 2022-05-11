@@ -1,0 +1,120 @@
+vue project 사전 준비
+	1. nodejs 설치 : https://nodejs.org/en/download/
+	2. nodejs 설치 확인 : npm -v 
+	3. vue/cli 설치 : npm i -g @vue/cli
+	4. vue/cli 설치 확인 : vue --version
+
+
+vue 프로젝트 루트 정하기 : c:\front-office
+	1. window + R (실행 ) : cmd 입력 후 엔터
+	2. cd/ && mkdir front-office && cd front-office
+
+vue 프로젝트 생성 
+1. 프로젝트 생성 : vue create vue-app
+	Vue CLI v5.0.4
+	? Please pick a preset: Default ([Vue 3] babel, eslint)
+	? Pick the package manager to use when installing dependencies: Yarn
+2. 프로젝트 생성 완료 시 터미널 내용 : 
+
+	📄  Generating README.md...
+
+	🎉  Successfully created project vue-app.
+	👉  Get started with the following commands:
+
+	 $ cd vue-app
+	 $ yarn serve
+	 
+
+개발 툴 설치 
+1. 개발 툴 다운로드 : https://code.visualstudio.com/	 
+2. vscode 실행 : cd vue-app && code .
+3. vscode 터미널 열기 : ctrl + shift + ~ 
+
+vue 프로젝트 실행
+1. vue 프로젝트 실행 : yarn serve
+2. vue 프로젝트 실행 완료시  터미널 내용
+
+	C:\job\front-end\vuejs\vue-app>yarn serve
+	yarn run v1.22.18
+	$ vue-cli-service serve
+	INFO  Starting development server...
+
+
+	DONE  Compiled successfully in 3601ms                                                                                                                      오후 9:29:55
+
+
+	App running at:
+	- Local:   http://localhost:8080/
+	- Network: http://192.168.0.46:8080/
+
+	Note that the development build is not optimized.
+	To create a production build, run yarn build.
+
+
+
+3. 크롬 브라우저 로 확인 : 위 링크를 ctrl + 클릭
+	http://localhost:8080/
+	http://192.168.0.46:8080/
+
+
+
+vue 프로젝트 배포용 빌드
+1. vue 프로젝트 배포용 빌드 : yarn build
+1. vue 프로젝트 배포용 빌드 완료시 터미널 내용
+
+	C:\job\front-end\vuejs\vue-app>yarn build
+	yarn run v1.22.18
+	$ vue-cli-service build
+	All browser targets in the browserslist configuration have supported ES module.
+	Therefore we don't build two separate bundles for differential loading.
+
+
+	⠋  Building for production...
+
+	DONE  Compiled successfully in 6548ms                                                                                                                      오후 9:44:26
+
+	File                                 Size                                                           Gzipped
+
+	dist\js\chunk-vendors.228a6286.js    75.39 KiB                                                      28.10 KiB
+	dist\js\app.03ad958e.js              13.05 KiB                                                      8.41 KiB
+	dist\css\app.2cf79ad6.css            0.33 KiB                                                       0.23 KiB
+
+	Images and other types of assets omitted.
+	Build at: 2022-05-11T12:44:26.064Z - Hash: 41c277f4be838900 - Time: 6548ms
+
+	DONE  Build complete. The dist directory is ready to be deployed.
+	INFO  Check out deployment instructions at https://cli.vuejs.org/guide/deployment.html
+
+	Done in 8.46s.
+
+vue 프로젝트 배포 가이드 문서 
+	https://cli.vuejs.org/guide/deployment.html
+
+
+
+라우터 설치 
+	npm i --save vue-router
+	npm i vue-router@next
+		https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
+
+
+axios 사용해서 데이터를 가져오자
+	axios 설치 : npm i --save axios
+
+json server 설치, 실행, 사용
+1. json server 설치 : npm install json-server -g 	
+2. json server 실행 : json-server data.json
+C:\job\front-end\vuejs\vue-app\src\data>json-server data.json
+
+	\{^_^}/ hi!
+
+	Loading data.json
+	Done
+
+	Resources
+	http://localhost:3000/items
+
+	Home
+	http://localhost:3000
+
+3. json server	데이터 확인 : http://localhost:3000/items
