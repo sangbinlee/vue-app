@@ -118,3 +118,81 @@ C:\job\front-end\vuejs\vue-app\src\data>json-server data.json
 	http://localhost:3000
 
 3. json server	데이터 확인 : http://localhost:3000/items
+
+
+
+express server 로 데이터 처리 해 보기
+1. 설치 : npm install express-generator -g
+2. express server project 생성하기 : express express-server
+
+	C:\job\front-end\vuejs\vue-app>express express-server
+
+	warning: the default view engine will not be jade in future releases
+	warning: use `--view=jade' or `--help' for additional options       
+
+
+	create : express-server\
+	create : express-server\public\
+	create : express-server\public\javascripts\
+	create : express-server\public\images\
+	create : express-server\public\stylesheets\
+	create : express-server\public\stylesheets\style.css
+	create : express-server\routes\
+	create : express-server\routes\index.js
+	create : express-server\routes\users.js
+	create : express-server\views\
+	create : express-server\views\error.jade
+	create : express-server\views\index.jade
+	create : express-server\views\layout.jade
+	create : express-server\app.js
+	create : express-server\package.json
+	create : express-server\bin\
+	create : express-server\bin\www
+
+	change directory:
+		> cd express-server
+
+	install dependencies:
+		> npm install
+
+	run the app:
+		> SET DEBUG=express-server:* & npm start
+
+
+3. express server project 세팅 : C:\job\front-end\vuejs\vue-app>cd express-server && npm install		
+4. express server 시작 : SET DEBUG=express-server:* & npm start
+	http://localhost:3000/
+
+
+express server project 소수 수정시 재시작 안하게 처리 모듈 설치
+1. 설치	: npm i --save-dev nodemon	
+2. 설정 : package.json 의 scripts 에     ,"dev": "nodemon ./bin/www" 추가
+3. 서버 실행 : npm run dev
+4. api 확인 : http://localhost:3000/api/board
+
+mysql 모듈 설치 
+1. npm i --save mysql
+  express-server:server Listening on port 3000 +0ms
+2. error - mysql connect error Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+2. root/	MySQLRootPassword:1!
+
+	ALTER USER 'springuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ThePassword';
+	select host, user, plugin, authentication_string from mysql.user; 
+
+
+3. http://localhost:3000/api/board
+
+
+
+
+도메인간 교차통신허용)
+0. error : Access to XMLHttpRequest at 'http://localhost:3000/api/board' from origin 'http://localhost:8080' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+1. cors 모듈 설치 : npm i --save cors
+2. express server 설정 : app.js
+	var cors = require('cors'); //교차통신 모듈 호출
+	app.use(cors())//교차통신 적용
+
+
+
+VUE PROJECT 에서 API 호출 화면 테스트
+1. http://localhost:8080/board/list	
